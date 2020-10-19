@@ -2,19 +2,20 @@ package com.bacon.workshop.controlstatements;
 
 public class EvenNames {
     public void namePrinter(String[] nameArray) {
-        String newName;
-        boolean switched;
-        do {
-            switched = false;
-            for (int nameIndex = 0; nameIndex < nameArray.length - 1; nameIndex++){
-                if(nameArray[nameIndex].compareTo(nameArray[nameIndex + 1]) > 0){
-                    newName = nameArray[nameIndex + 1];
-                    nameArray[nameIndex + 1] = nameArray[nameIndex];
-                    nameArray[nameIndex] = newName;
-                    switched = true;
+        String listOfNames[] = { "Oscar", "Wilfred", "Adam", "Bethany", "Sam" };
+        for (int nameIndex = 0; nameIndex < nameArray.length - 1; nameIndex++) {
+            int indexMinimum = nameIndex;
+            for (int newIndex = nameIndex + 1; newIndex < nameArray.length; newIndex++) {
+                if (nameArray[newIndex].compareTo(nameArray[indexMinimum]) < 0) {
+                    indexMinimum = newIndex;
                 }
             }
-        } while (switched);
+            if (indexMinimum != nameIndex) {
+                String newString = nameArray[nameIndex];
+                nameArray[nameIndex] = nameArray[indexMinimum];
+                nameArray[indexMinimum] = newString;
+            }
+        }
 
         for (int newNameIndex = 0; newNameIndex < nameArray.length; newNameIndex++) {
             if (newNameIndex % 2 == 0) {
