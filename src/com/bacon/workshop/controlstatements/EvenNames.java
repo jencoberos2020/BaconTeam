@@ -1,8 +1,7 @@
 package com.bacon.workshop.controlstatements;
 
 public class EvenNames {
-    public void namePrinter(String[] nameArray) {
-        String listOfNames[] = { "Oscar", "Wilfred", "Adam", "Bethany", "Sam" };
+    public void namePrinter(String[] nameArray) {=
         for (int nameIndex = 0; nameIndex < nameArray.length - 1; nameIndex++) {
             int indexMinimum = nameIndex;
             for (int newIndex = nameIndex + 1; newIndex < nameArray.length; newIndex++) {
